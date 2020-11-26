@@ -43,5 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 dependencies {
+
+    implementation 'androidx.navigation:navigation-runtime:2.3.1'
     compile 'androidx.legacy:legacy-support-v4:1.0.0'
 }
