@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/design_default_color_primary"
+    android:gravity="center_vertical"
+    app:layout_collapseMode="pin"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:theme="@style/CardView.Light">
+
+<TextView
+android:id="@+id/tv_toolbar_custom"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textColor="#fff"
+android:textSize="22dp"
+android:textStyle="bold"
+android:text="Choose your role"
+    />
+    </androidx.appcompat.widget.Toolbar>
