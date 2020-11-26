@@ -43,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("ForgetMeNot");
         // Display home button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // Received the data from ActivityLogin
+        Bundle bundle = getIntent().getExtras();
+        AfterLogin(bundle);
     }
 
     @Override
@@ -83,6 +87,20 @@ public class MainActivity extends AppCompatActivity {
         else {
             // otherwise, select the previous step
             viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
+        }
+    }
+
+    public void AfterLogin(Bundle bundle) {
+        if(bundle != null) {
+            String email = bundle.getString("email");
+            String password = bundle.getString("password");
+            String role = bundle.getString("role");
+
+            if(email != null && password != null) {
+                //getSupportActionBar().setTitle("Test, Success Login");
+                String testResult = String.format("%s : %s : %s", email, password, role);
+                Toast.makeText(this, testResult, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }
