@@ -63,12 +63,19 @@ public class MainActivity extends AppCompatActivity {
 
         switch (id) {
             case R.id.home:
+                Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.action_search:
-                Toast.makeText(this, "Search Icon Click", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Test List of Patient", Toast.LENGTH_SHORT).show();
+                // WIll delete
+                FragmentPatientList fragPatientList = new FragmentPatientList();
+                adapter.addFragment(fragPatientList, "Test list");
+                viewPager.setAdapter(adapter);
+                tabLayout.setupWithViewPager(viewPager);
+                tabLayout.setBackgroundColor(0xff234233);
                 return true;
             case R.id.action_setting:
-                Toast.makeText(this, "Setting Icon Click", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Test Login page", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), ActivityLogin.class);
                 startActivity(intent);
                 return true;
