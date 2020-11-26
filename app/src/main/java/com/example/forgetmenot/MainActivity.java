@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Tab1Fragment(), "Tab 1");
-        adapter.addFragment(new Tab2Fragment(), "Tab 2");
-        adapter.addFragment(new Tab3Fragment(), "Tab 3");
+        adapter.addFragment(new PatientFragment(), "Patient");
+        adapter.addFragment(new DoctorFragment(), "Doctor");
+        adapter.addFragment(new CareTakerFragment(), "Care Taker");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setBackgroundColor(0xff234233);
