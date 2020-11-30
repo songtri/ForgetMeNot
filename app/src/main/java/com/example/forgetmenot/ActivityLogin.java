@@ -23,7 +23,7 @@ public class ActivityLogin  extends AppCompatActivity {
     Button btnLogIn;
     RadioGroup radioGroupRole;
     RadioButton rbtnPatient, rbtnDoctor, rbtnCareTaker;
-    String rBtnRole;
+    Role loginRole;
     EditText textEmail, textPassword;
     LinearLayout linearLayout;
     Toolbar toolbar;
@@ -98,11 +98,11 @@ public class ActivityLogin  extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId == R.id.RBtnPatient)
-                    rBtnRole = "Patient";
+                    loginRole = Role.Patient;
                 else if(checkedId == R.id.RBtnDoctor)
-                    rBtnRole = "Doctor";
+                    loginRole = Role.Doctor;
                 else if(checkedId == R.id.RBtnCareTaker)
-                    rBtnRole = "CareTaker";
+                    loginRole = Role.Caretaker;
             }
         });
 
@@ -114,9 +114,10 @@ public class ActivityLogin  extends AppCompatActivity {
                 String password = textPassword.getText().toString();
 
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("isFromLogin", true);
                 intent.putExtra("email", email);
                 intent.putExtra("password", password);
-                intent.putExtra("role", rBtnRole);
+                intent.putExtra("role", loginRole.toString());
                 startActivity(intent);
             }
         });
